@@ -1,5 +1,5 @@
 const express = require('express');
-const morgan = require('morgan'),
+const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const nunjucks = require('nunjucks');
@@ -11,7 +11,7 @@ const indexRouter = require('./routes');
 const app = express();
 app.set('port', process.env.PORT || 4000);
 app.set('view engine', 'html');
-nunjucks.config('views', {
+nunjucks.configure('views', {
     express: app,
     watch: true,
 });
