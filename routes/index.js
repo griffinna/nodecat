@@ -52,6 +52,12 @@ router.get('/search/:hashtag', async (req, res, next) => {
     }
 });
 
+router.get('/', (req, res) => {
+    res.render('main', { key: process.env.CLIENT_SECRET });
+});
+
+module.exports = router;
+
 // router.get('/test', async (req, res, next) => { // 토큰 테스트 라우터
 //     try {
 //         if(!req.session.jwt) {  // 세션에 토큰이 없으면 토큰 발급 시도
@@ -77,5 +83,3 @@ router.get('/search/:hashtag', async (req, res, next) => {
 //         return next(error);
 //     }
 // });
-
-module.exports = router;
